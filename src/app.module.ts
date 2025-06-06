@@ -7,10 +7,10 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { TracksModule } from './tracks/tracks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    CatsModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       graphiql: true,
@@ -24,10 +24,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'root',
       database: 'test',
-      entities: [],
+      autoLoadEntities: true,
       synchronize: true,
     }),
+    CatsModule,
     TracksModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
