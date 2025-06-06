@@ -5,6 +5,7 @@ import { CatsModule } from './cats/cats.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
+import { TracksModule } from './tracks/tracks.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { join } from 'path';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
     }),
+    TracksModule,
   ],
   controllers: [AppController],
   providers: [AppService],

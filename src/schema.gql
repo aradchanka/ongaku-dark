@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateTrackInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Mutation {
+  createTrack(createTrackInput: CreateTrackInput!): Track!
+  removeTrack(id: Int!): Track!
+  updateTrack(updateTrackInput: UpdateTrackInput!): Track!
+}
+
+type Query {
+  track(id: Int!): Track!
+  tracks: [Track!]!
+}
+
+type Track {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTrackInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
