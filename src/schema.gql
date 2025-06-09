@@ -7,15 +7,25 @@ input CreateTrackInput {
   exampleField: Int!
 }
 
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 type Mutation {
   createTrack(createTrackInput: CreateTrackInput!): Track!
+  createUser(createUserInput: CreateUserInput!): User!
   removeTrack(id: Int!): Track!
+  removeUser(id: Int!): User!
   updateTrack(updateTrackInput: UpdateTrackInput!): Track!
+  updateUser(updateUserInput: UpdateUserInput!): User!
 }
 
 type Query {
   track(id: Int!): Track!
   tracks: [Track!]!
+  user(id: Int!): User!
+  users: [User!]!
 }
 
 type Track {
@@ -27,4 +37,15 @@ input UpdateTrackInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+type User {
+  """Example field (placeholder)"""
+  exampleField: Int!
 }
